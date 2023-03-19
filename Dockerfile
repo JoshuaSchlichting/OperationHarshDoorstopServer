@@ -11,16 +11,17 @@ WORKDIR ${INSTALL_DIR}
 
 # Game Port (Inbound UDP; in the .bat command line argument this is represented as “-Port=”)
 EXPOSE 7777/udp
-# Steam Client Port (Outbound UDP; this is always the Game Port +1)
-EXPOSE 7778/udp
+
+# Steam Client Port 7778/udp (Outbound UDP; this is always the Game Port +1), no need to expose this as it is outbound
+
 # Steam Query Port (Inbound UDP; in the .bat command line argument this is represented as “-QueryPort=”)
 EXPOSE 27005/udp
 # RCON Port (Inbound TCP; the “ListenPort” in Game.ini
 EXPOSE 7779/tcp
 
 COPY HarshDoorstopServer.sh .
-# COPY GameUserSettings.ini HarshDoorstop/Saved/Config/LinuxServer/GameUserSettings.ini
+COPY GameUserSettings.ini HarshDoorstop/Saved/Config/LinuxServer/GameUserSettings.ini
 # Make ini file read open to reading and writing from any user
 
 
-CMD ["./HarshDoorstopServer.sh"]
+ENTRYPOINT ["./HarshDoorstopServer.sh"]
