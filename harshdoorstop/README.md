@@ -27,4 +27,4 @@ git clone https://github.com/JoshuaSchlichting/OperationHarshDoorstopServer.git
 cd OperationHarshDoorstopServer
 ```
 8. Build the docker image
-Execute `run.sh`
+Execute `run.sh "<server name here>"`
