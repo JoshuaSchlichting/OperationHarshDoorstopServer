@@ -16,11 +16,10 @@ usermod -a -G docker ec2-user
 cd /home/ec2-user
 git clone https://github.com/JoshuaSchlichting/SteamServer.git
 cd SteamServer
-git checkout multi
 
 # if gamename is harshdoorstop then cd into harshdoorstop
 if [ "$GAME_NAME" = "harshdoorstop" ]; then
-    cd SteamServer/harshdoorstop/
+    cd harshdoorstop/
     echo starting with game server name: "$GAME_SERVER_NAME"
     # Temporarily hard coded :)
     ./run.sh "$GAME_SERVER_NAME" "$RCON_PASSWORD"
@@ -28,7 +27,7 @@ fi
 
 # if gamename is counterstrike then cd into counterstrike
 if [ "$GAME_NAME" = "counterstrike" ]; then
-    cd SteamServer/counterstrike/
+    cd counterstrike/
     echo starting with game server name: "$GAME_SERVER_NAME"
     # Temporarily hard coded :)
     ./run.sh "$GAME_SERVER_NAME" "$RCON_PASSWORD"
