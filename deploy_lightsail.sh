@@ -2,6 +2,7 @@
 
 SERVER_NAME=${1:-"HarshDoorstopServer"}
 
+aws configure set region us-east-1
 
 aws lightsail create-instances \
     --instance-name $SERVER_NAME \
