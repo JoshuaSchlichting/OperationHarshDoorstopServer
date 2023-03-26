@@ -1,6 +1,6 @@
 #! /bin/bash
 
-GAME_SERVER_NAME=GAMESERVERNAME
+GAME_SERVER_NAME="GAMESERVERNAME"
 
 # Check "sudo cat /var/log/cloud-init-output.log" for output
 su -c "echo 'sudo tail -f /var/log/cloud-init-output.log' >> /home/ec2-user/get-init-log.sh" ec2-user
