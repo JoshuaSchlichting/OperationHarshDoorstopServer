@@ -11,6 +11,14 @@ on:
         description: 'Name of Steam server'     
         required: true
         default: '#1 Casual Coop'
+      gameName:
+        description: 'Name of game'
+        required: true
+        default: 'cs'
+      rconPassword:
+        description: 'RCON password'
+        required: true
+        default: 'alexb'
 
 jobs:
   deploy:
@@ -35,6 +43,9 @@ jobs:
       - name: Plug game server name into lightsail startup script
         run: |
           findreplace -find "GAMESERVERNAME" -replace "${{ github.event.inputs.steamServerName }}" -path lightsail_startup.sh
+          findreplace -find "GAMENAME" -replace "${{ github.event.inputs.gameName }}" -path lightsail_startup.sh
+          findreplace -find "RCONPASSWORD" -replace "${{ github.event.inputs.rconPassword }}" -path lightsail_startup.sh
+
 
 
       - name: Deploy Lightsail server
