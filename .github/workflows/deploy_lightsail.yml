@@ -26,8 +26,14 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
       
+      - name: Install find replace
+        run: |
+          curl -LJO https://github.com/joshuaschlichting/findreplace/releases/download/v0.0.1/findreplace_linux_amd64
+          chmod +x findreplace_linux_amd64
+          sudo mv findreplace_linux_amd64 /usr/local/bin/findreplace
+
       - name: Plug game server name into lightsail startup script
-        run: sed -i "s/\"$1\"/${{ github.event.inputs.steamServerName }}/g" ./lightsail_startup.sh
+        run: ./findreplace -find "$1" -replace "${{ github.event.inputs.steamServerName }}" -file lightsail_startup.sh
 
 
       - name: Deploy Lightsail server
