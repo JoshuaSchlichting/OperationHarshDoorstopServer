@@ -1,7 +1,6 @@
 docker build -t ohd .
 
 docker run \
-    -it \
     --rm \
     --name OperationHarshDoorstop \
     -p 7777:7777/udp \
