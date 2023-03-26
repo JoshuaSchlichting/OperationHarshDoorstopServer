@@ -20,7 +20,6 @@ EXPOSE 27005/udp
 EXPOSE 7779/tcp
 
 COPY HarshDoorstopServer.sh .
-COPY GameUserSettings.ini HarshDoorstop/Saved/Config/LinuxServer/GameUserSettings.ini
 # Make ini file read open to reading and writing from any user
 
 
