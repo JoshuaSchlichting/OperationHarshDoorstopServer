@@ -1,5 +1,3 @@
-docker build -t ohd .
-
 docker run \
     --name counter-strike_server \
     -p 27015:27015/udp \
