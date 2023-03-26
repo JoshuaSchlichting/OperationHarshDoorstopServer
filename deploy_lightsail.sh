@@ -1,6 +1,6 @@
 #! /bin/bash
 
-SERVER_NAME={$1:-"HarshDoorstopServer"}
+SERVER_NAME=${1:-"HarshDoorstopServer"}
 
 
 aws lightsail create-instances \
