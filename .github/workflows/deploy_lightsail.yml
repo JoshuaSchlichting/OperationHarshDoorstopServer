@@ -14,7 +14,7 @@ on:
       gameName:
         description: 'Name of game'
         required: true
-        default: 'cs'
+        default: 'counterstrike'
       rconPassword:
         description: 'RCON password'
         required: true
