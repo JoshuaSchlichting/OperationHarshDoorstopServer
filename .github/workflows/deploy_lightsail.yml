@@ -27,4 +27,4 @@ jobs:
           aws-region: us-east-1
       
       - name: Deploy Lightsail server
-        run: ./deploy_lightsail.sh ${{ github.event.inputs.instanceName }} ${{ github.event.inputs.steamServerName }}
+        run: ./deploy_lightsail.sh ${{ github.event.inputs.instanceName }} "${{ github.event.inputs.steamServerName }}"
