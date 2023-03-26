@@ -33,7 +33,9 @@ jobs:
           sudo mv findreplace_linux_amd64 /usr/local/bin/findreplace
 
       - name: Plug game server name into lightsail startup script
-        run: findreplace -find "$1" -replace "${{ github.event.inputs.steamServerName }}" -path lightsail_startup.sh
+        run: |
+          findreplace -find "$1" -replace "${{ github.event.inputs.steamServerName }}" -path lightsail_startup.sh
+          cat lightsail_startup.sh
 
 
       - name: Deploy Lightsail server
