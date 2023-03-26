@@ -9,7 +9,7 @@ aws lightsail create-instances \
     --availability-zone us-east-1a \
     --blueprint-id amazon_linux_2 \
     --bundle-id micro_2_0 \
-    --user-data file://lightsail_startup.sh
+    --user-data file://lightsail_startup.sh \
     --user-data-args $GAME_SERVER_NAME
 
 while true; do
