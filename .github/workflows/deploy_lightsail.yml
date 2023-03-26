@@ -10,7 +10,7 @@ on:
       steamServerName:
         description: 'Name of AWS Lightsail instance'     
         required: true
-        default: ${{ github.event.repository.name }}
+        default: '#1 Casual Coop'
 
 jobs:
   deploy:
