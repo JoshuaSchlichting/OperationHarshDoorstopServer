@@ -33,4 +33,6 @@ aws lightsail open-instance-public-ports --instance-name $INSTANCE_NAME \
 
 # Counter-Strike
 aws lightsail open-instance-public-ports --instance-name $INSTANCE_NAME \
-    --port-info fromPort=27015,toPort=27015,protocol=all
+    --port-info fromPort=27015,toPort=27015,protocol=tcp
+aws lightsail open-instance-public-ports --instance-name $INSTANCE_NAME \
+    --port-info fromPort=27015,toPort=27015,protocol=udp
