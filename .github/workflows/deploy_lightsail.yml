@@ -27,7 +27,7 @@ jobs:
           aws-region: us-east-1
       
       - name: Plug game server name into lightsail startup script
-        run: sed -i "s/$1/${{ github.event.inputs.steamServerName }}/g" ./lightsail_startup.sh
+        run: sed -i "s/\"$1\"/${{ github.event.inputs.steamServerName }}/g" ./lightsail_startup.sh
 
 
       - name: Deploy Lightsail server
