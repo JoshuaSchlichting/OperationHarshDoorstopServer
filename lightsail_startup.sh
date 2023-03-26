@@ -16,4 +16,4 @@ git clone https://github.com/JoshuaSchlichting/SteamServer.git
 cd SteamServer/harshdoorstop/
 
 # Temporarily hard coded :)
-./run.sh "$1"
+./run.sh "$GAME_SERVER_NAME"

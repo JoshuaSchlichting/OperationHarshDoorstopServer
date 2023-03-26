@@ -26,5 +26,9 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
       
+      - name: Plug game server name into lightsail startup script
+        run: sed -i "s/$1/${{ github.event.inputs.steamServerName }}/g" ./lightsail_startup.sh
+
+
       - name: Deploy Lightsail server
         run: ./deploy_lightsail.sh ${{ github.event.inputs.instanceName }} "${{ github.event.inputs.steamServerName }}"
