@@ -15,5 +15,6 @@ cd /home/ec2-user
 git clone https://github.com/JoshuaSchlichting/SteamServer.git
 cd SteamServer/harshdoorstop/
 
+echo starting with game server name: $GAME_SERVER_NAME
 # Temporarily hard coded :)
 ./run.sh "$GAME_SERVER_NAME"
