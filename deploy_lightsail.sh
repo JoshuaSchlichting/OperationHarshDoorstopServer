@@ -23,5 +23,9 @@ done
 
 aws lightsail open-instance-public-ports --instance-name $INSTANCE_NAME \
     --port-info fromPort=7777,toPort=7777,protocol=udp \
+
+aws lightsail open-instance-public-ports --instance-name $INSTANCE_NAME \
     --port-info fromPort=7779,toPort=7779,protocol=tcp \
+
+aws lightsail open-instance-public-ports --instance-name $INSTANCE_NAME \
     --port-info fromPort=27005,toPort=27005,protocol=udp
