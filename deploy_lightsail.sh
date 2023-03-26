@@ -1,18 +1,27 @@
 #! /bin/bash
 
-SERVER_NAME=SteamServer
+INSTANCE_NAME=SteamServer
 
 
 aws lightsail create-instances \
-    --instance-name $SERVER_NAME \
+    --instance-name $INSTANCE_NAME \
     --availability-zone us-east-1a \
     --blueprint-id amazon_linux_2 \
     --bundle-id nano_2_0 \
     --user-data file://lightsail_startup.sh
 
-aws lightsail wait instance-running --instance-name $SERVER_NAME --max-wait-time-seconds 900
+while true; do
+  INSTANCE_STATUS=$(aws lightsail get-instance-state --instance-name $INSTANCE_NAME --query state.name --output text)
+  if [[ $INSTANCE_STATUS == "running" ]]; then
+    echo "Instance $INSTANCE_NAME is now running"
+    break
+  else
+    echo "Instance $INSTANCE_NAME is still $INSTANCE_STATUS"
+    sleep 10
+  fi
+done
 
-aws lightsail open-instance-public-ports --instance-name $SERVER_NAME \
+aws lightsail open-instance-public-ports --instance-name $INSTANCE_NAME \
     --port-info fromPort=7777,toPort=7777,protocol=udp \
     --port-info fromPort=7779,toPort=7779,protocol=tcp \
     --port-info fromPort=27005,toPort=27005,protocol=udp
