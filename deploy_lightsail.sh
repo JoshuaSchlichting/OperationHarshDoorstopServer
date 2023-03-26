@@ -1,6 +1,7 @@
 #! /bin/bash
 
-INSTANCE_NAME=SteamServer
+INSTANCE_NAME=$1
+GAME_SERVER_NAME=$2
 
 
 aws lightsail create-instances \
@@ -9,6 +10,7 @@ aws lightsail create-instances \
     --blueprint-id amazon_linux_2 \
     --bundle-id micro_2_0 \
     --user-data file://lightsail_startup.sh
+    --user-data-args $GAME_SERVER_NAME
 
 while true; do
   INSTANCE_STATUS=$(aws lightsail get-instance-state --instance-name $INSTANCE_NAME --query state.name --output text)

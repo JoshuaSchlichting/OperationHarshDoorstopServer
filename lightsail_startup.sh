@@ -1,5 +1,7 @@
 #! /bin/bash
 
+GAME_SERVER_NAME=$1
+
 # Check "sudo cat /var/log/cloud-init-output.log" for output
 su -c "echo 'sudo tail -f /var/log/cloud-init-output.log' >> /home/ec2-user/get-init-log.sh" ec2-user
 su -c "chmod +x /home/ec2-user/get-init-log.sh" ec2-user
@@ -14,4 +16,4 @@ git clone https://github.com/JoshuaSchlichting/SteamServer.git
 cd SteamServer/harshdoorstop/
 
 # Temporarily hard coded :)
-./run.sh "Self Hosted Harsh Doorstop Server"
+./run.sh "$1"
