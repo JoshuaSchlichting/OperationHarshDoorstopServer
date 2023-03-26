@@ -1,10 +1,6 @@
 #! /bin/bash
 
 INSTANCE_NAME=$1
-GAME_SERVER_NAME=$2
-
-
-
 
 
 aws lightsail create-instances \
