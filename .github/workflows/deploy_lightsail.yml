@@ -8,7 +8,7 @@ on:
         required: true
         default: 'SteamServer'
       steamServerName:
-        description: 'Name of AWS Lightsail instance'     
+        description: 'Name of Steam server'     
         required: true
         default: '#1 Casual Coop'
 
