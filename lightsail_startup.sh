@@ -15,7 +15,8 @@ usermod -a -G docker ec2-user
 # Checkout this repo
 cd /home/ec2-user
 git clone https://github.com/JoshuaSchlichting/SteamServer.git
-
+cd SteamServer
+git checkout multi
 
 # if gamename is harshdoorstop then cd into harshdoorstop
 if [ "$GAME_NAME" = "harshdoorstop" ]; then
