@@ -11,7 +11,7 @@ usermod -a -G docker ec2-user
 # Checkout this repo
 cd /home/ec2-user
 git clone https://github.com/JoshuaSchlichting/SteamServer.git
-cd SteamServer
+cd SteamServer/harshdoorstop/
 
 # Temporarily hard coded :)
-./harshdoorstop/run.sh "Self Hosted Harsh Doorstop Server"
+./run.sh "Self Hosted Harsh Doorstop Server"
