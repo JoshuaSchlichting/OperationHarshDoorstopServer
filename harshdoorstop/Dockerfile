@@ -1,7 +1,5 @@
 FROM cm2network/steamcmd
 
-LABEL maintainer="JoshuaSchlichting <7680545+JoshuaSchlichting@users.noreply.github.com>"
-
 ENV APPID=950900 \
     VALIDATE=1 \
     INSTALL_DIR=/home/steam/ohd
